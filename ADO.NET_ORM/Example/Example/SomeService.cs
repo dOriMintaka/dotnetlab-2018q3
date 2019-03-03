@@ -22,7 +22,7 @@ namespace Example
                         foreach (var orderItem in order.OrderItems)
                         {
                             var item = items.Single(i => i.Id == orderItem.ItemId);
-                            Console.WriteLine($"\t{item.Id} - {item.Description} - ${item.Price}");
+                            Console.WriteLine($"\t{item.Id} - {item.Description} - ${item.Price} - {orderItem.Quantity} pcs");
                         }
                     }
                 }
