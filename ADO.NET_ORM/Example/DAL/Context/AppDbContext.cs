@@ -13,6 +13,7 @@ namespace DAL.Context
 
         public DbSet<Item> Items { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -20,6 +21,7 @@ namespace DAL.Context
 
             modelBuilder.Configurations.Add(new ItemConfig());
             modelBuilder.Configurations.Add(new OrderConfig());
+            modelBuilder.Configurations.Add(new OrderItemConfig());
             base.OnModelCreating(modelBuilder);
         }
     }
