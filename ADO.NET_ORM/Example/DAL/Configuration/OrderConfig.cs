@@ -18,6 +18,7 @@ namespace DAL.Configuration
             this.HasKey(e => e.Id);
             this.Property(e => e.Id).HasColumnName("cln_order_id");
             this.Property(e => e.Date).HasColumnName("cln_order_date");
+            this.Property(e => e.CustomerId).HasColumnName("cln_customer_id");
             this.HasMany(e => e.OrderItems).WithRequired().HasForeignKey(e => e.OrderId);
         }
     }
