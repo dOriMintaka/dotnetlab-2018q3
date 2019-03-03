@@ -8,7 +8,7 @@ namespace DAL.Context
     {
         public AppDbContext() : base("InternationWidgets")
         {
-            
+             Database.SetInitializer(new MigrateDatabaseToLatestVersion<AppDbContext, Migrations.Configuration>());
         }
 
         public DbSet<Item> Items { get; set; }
@@ -17,6 +17,7 @@ namespace DAL.Context
         {
             //TODO: setup dbcontext configuration using EF Fluent API. DO NOT add property attributes for any files from "Entities" folder.
 
+            modelBuilder.Configurations.Add(new ItemConfig());
             base.OnModelCreating(modelBuilder);
         }
     }
