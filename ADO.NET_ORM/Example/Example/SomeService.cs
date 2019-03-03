@@ -11,7 +11,7 @@ namespace Example
             using (var context = new AppDbContext())
             {
                 var items = context.Items.ToList();
-                var customers = context.Customers.ToList();
+                var customers = context.Customers.Include("Orders.OrderItems").ToList();
 
                 foreach (var customer in customers)
                 {
