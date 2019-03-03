@@ -50,11 +50,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\ItemConfig.cs" />
+    <Compile Include="Configuration\OrderConfig.cs" />
     <Compile Include="Context\AppDbContext.cs" />
     <Compile Include="Entities\Item.cs" />
+    <Compile Include="Entities\Order.cs" />
     <Compile Include="Migrations\201903030155541_InitialMigration.cs" />
     <Compile Include="Migrations\201903030155541_InitialMigration.Designer.cs">
       <DependentUpon>201903030155541_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903031741345_OrderMigration.cs" />
+    <Compile Include="Migrations\201903031741345_OrderMigration.Designer.cs">
+      <DependentUpon>201903031741345_OrderMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,6 +72,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201903030155541_InitialMigration.resx">
       <DependentUpon>201903030155541_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903031741345_OrderMigration.resx">
+      <DependentUpon>201903031741345_OrderMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
