@@ -11,12 +11,20 @@ namespace Example
             using (var context = new AppDbContext())
             {
                 var items = context.Items.ToList();
+                var customers = context.Customers.ToList();
 
-                Console.WriteLine($"Items number: {items.Count}");
-
-                foreach (var item in items)
+                foreach (var customer in customers)
                 {
-                    Console.WriteLine($"{item.Id} - {item.Description} - {item.Price}");
+                    Console.WriteLine($"Orders for customer {customer.Id} - {customer.Name}:");
+                    foreach (var order in customer.Orders)
+                    {
+                        Console.WriteLine($"Id: {order.Id}\nDate: {order.Date}\nItems:");
+                        foreach (var orderItem in order.OrderItems)
+                        {
+                            var item = items.Single(i => i.Id == orderItem.ItemId);
+                            Console.WriteLine($"\t{item.Id} - {item.Description} - ${item.Price}");
+                        }
+                    }
                 }
             }
         }

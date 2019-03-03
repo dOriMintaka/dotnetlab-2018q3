@@ -13,7 +13,7 @@ namespace DAL.Migrations
                              {
                                  cln_item_id = c.Int(nullable: false, identity: true),
                                  cln_item_description = c.String(nullable: false),
-                                 cln_item_price = c.Decimal(nullable: false)
+                                 cln_item_price = c.Decimal(nullable: false, scale: 2)
                              })
                 .PrimaryKey(t => t.cln_item_id);
             this.Sql(@"set identity_insert tbl_items on
